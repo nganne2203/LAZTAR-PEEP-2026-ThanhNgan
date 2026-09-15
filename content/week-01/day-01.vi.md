@@ -1,5 +1,5 @@
 +++
-title = "Ngày 01 - 15/06/2026"
+title = "Ngày 01 - 15/09/2026"
 weight = 1
 +++
 
@@ -99,3 +99,6 @@ weight = 1
 - Luôn thêm `node_modules/` và `dist/` vào `.gitignore`
 - Sử dụng tên thư mục rõ ràng và mô tả
 - Nhóm các tệp liên quan lại với nhau để dễ dàng điều hướng
+
+
+## Result/Output
