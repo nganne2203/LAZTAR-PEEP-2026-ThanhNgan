@@ -13,7 +13,7 @@ chapter: false
 
 ### PEEP 2026 Notes
 
-This site records my notes for the first experience phase of the **Product Engineering Experience Program 2026 - Software Engineer** at LAZTAR Software & Digital Solutions Co., Ltd. ([Source Template Report](https://github.com/SharonNg1029/LAZTAR-PEEP2026-Trainee-Notes))
+This site records my notes for the first experience phase of the **Product Engineering Experience Program 2026 - Software Engineer** at LAZTAR Software & Digital Solutions Co., Ltd. ([Source Template Report](https://github.com/nganne2203/LAZTAR-PEEP-2026-ThanhNgan))
 
 PEEP is designed for students who want to grow into software engineers through real product engineering practice, mentoring, technical review, teamwork, and professional communication.
 
