@@ -272,6 +272,22 @@ Có. `create-next-app` có thể khởi tạo dự án TypeScript, tự cài typ
 
 Nền tảng triển khai phải hỗ trợ những tính năng dự án sử dụng như SSR, ISR, Route Handlers, image optimization hoặc Proxy/Middleware.
 
+## B. Tổng kết
+
+### Những gì đã học được
+
+- **HTML/CSS:** Dùng HTML có ngữ nghĩa để tổ chức các phần của landing page; dùng Flexbox/Grid, khoảng cách, màu sắc và typography để tạo bố cục nhất quán.
+- **React và Next.js:** Chia giao diện thành component tái sử dụng, truyền dữ liệu bằng props và hiểu khi nào cần state. Phân biệt App Router, Server Component và Client Component để chọn cách xây dựng trang phù hợp.
+- **Responsive:** Thiết kế bố cục thích ứng bằng CSS media queries; kiểm tra kích thước màn hình trên DevTools và điều chỉnh menu, cột nội dung, chữ và hình ảnh cho thiết bị nhỏ.
+- **Tối ưu trang:** Chú ý kích thước ảnh, văn bản thay thế, metadata và các liên kết để trang dễ sử dụng và tải hợp lý.
+- **Deploy Vercel:** Hiểu quy trình đưa mã nguồn lên Git, kết nối repository với Vercel, chạy build và kiểm tra trang trên URL đã triển khai.
+
+### Khó khăn gặp phải và cách giải quyết
+
+- **Khó phân biệt React với Next.js và các cách rendering:** Đối chiếu vai trò của thư viện và framework; lập ví dụ riêng cho CSR, SSR, SSG và ISR để chọn cách phù hợp với từng loại nội dung.
+- **Bố cục dễ bị tràn hoặc lệch trên màn hình nhỏ:** Kiểm tra từng breakpoint bằng DevTools, cho các cột xếp chồng, điều chỉnh khoảng cách và bảo đảm ảnh không vượt quá chiều rộng vùng chứa.
+- **Ảnh hoặc liên kết hoạt động ở local nhưng lỗi sau deploy:** Kiểm tra đường dẫn, cấu hình nguồn ảnh remote khi dùng `next/image`, xem build log trên Vercel và thử lại toàn bộ liên kết trên bản deploy.
+
 ## Landing page
 
-[https://portfolio-nganne2203s-projects.vercel.app/](https://portfolio-nganne2203s-projects.vercel.app/)
+[Portfolio](https://portfolio-nganne2203s-projects.vercel.app/)

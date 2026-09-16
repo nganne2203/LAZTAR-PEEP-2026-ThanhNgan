@@ -272,6 +272,22 @@ Yes. `create-next-app` can initialize a TypeScript project, install the required
 
 The deployment platform must support the project's requirements, such as SSR, ISR, Route Handlers, image optimization, or Proxy/Middleware.
 
+## B. Summary
+
+### What I learned
+
+- **HTML/CSS:** Use semantic HTML to organize the landing page and Flexbox/Grid, spacing, colors, and typography to create a consistent layout.
+- **React and Next.js:** Split the UI into reusable components, pass data through props, and understand when state is needed. Distinguish the App Router, Server Components, and Client Components when choosing how to build a page.
+- **Responsive design:** Adapt the layout with CSS media queries; test screen sizes in DevTools and adjust navigation, content columns, text, and images for smaller devices.
+- **Page optimization:** Pay attention to image sizes, alternative text, metadata, and links so the page remains usable and loads efficiently.
+- **Vercel deployment:** Understand the workflow of pushing code to Git, connecting the repository to Vercel, running the build, and checking the deployed URL.
+
+### Challenges and how I addressed them
+
+- **Distinguishing React from Next.js and the rendering approaches:** Compare the roles of library and framework, then use separate examples of CSR, SSR, SSG, and ISR to choose an approach for each type of content.
+- **Layout overflow or misalignment on small screens:** Check each breakpoint in DevTools, stack columns, adjust spacing, and keep images within their containers.
+- **Images or links working locally but failing after deployment:** Check paths and remote image configuration when using `next/image`, inspect Vercel build logs, and retest all links on the deployed site.
+
 ## Landing page
 
-[https://portfolio-nganne2203s-projects.vercel.app/](https://portfolio-nganne2203s-projects.vercel.app/)
+[Portfolio](https://portfolio-nganne2203s-projects.vercel.app/)
