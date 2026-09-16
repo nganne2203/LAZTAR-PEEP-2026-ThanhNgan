@@ -288,6 +288,7 @@ Nền tảng triển khai phải hỗ trợ những tính năng dự án sử d�
 - **Bố cục dễ bị tràn hoặc lệch trên màn hình nhỏ:** Kiểm tra từng breakpoint bằng DevTools, cho các cột xếp chồng, điều chỉnh khoảng cách và bảo đảm ảnh không vượt quá chiều rộng vùng chứa.
 - **Ảnh hoặc liên kết hoạt động ở local nhưng lỗi sau deploy:** Kiểm tra đường dẫn, cấu hình nguồn ảnh remote khi dùng `next/image`, xem build log trên Vercel và thử lại toàn bộ liên kết trên bản deploy.
 
-## Landing page
+## URL PAGE
 
-[Portfolio](https://portfolio-nganne2203s-projects.vercel.app/)
+* Link landing page: [portfolio-nganne2203s-projects.vercel.app](https://portfolio-nganne2203s-projects.vercel.app/)
+* Link Repo: [github.com/nganne2203/Portfolio](https://github.com/nganne2203/Portfolio)

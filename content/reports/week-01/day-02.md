@@ -288,6 +288,7 @@ The deployment platform must support the project's requirements, such as SSR, IS
 - **Layout overflow or misalignment on small screens:** Check each breakpoint in DevTools, stack columns, adjust spacing, and keep images within their containers.
 - **Images or links working locally but failing after deployment:** Check paths and remote image configuration when using `next/image`, inspect Vercel build logs, and retest all links on the deployed site.
 
-## Landing page
+## URL PAGE
 
-[Portfolio](https://portfolio-nganne2203s-projects.vercel.app/)
+* Link landing page: [portfolio-nganne2203s-projects.vercel.app](https://portfolio-nganne2203s-projects.vercel.app/)
+* Link Repo: [github.com/nganne2203/Portfolio](https://github.com/nganne2203/Portfolio)
