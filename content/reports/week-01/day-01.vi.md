@@ -1,14 +1,16 @@
 +++
-title = "Ngày 01 - Báo cáo Git"
+title = "Day 01 - 15/09/2026 (On-site)"
 weight = 1
 +++
 
 # Báo cáo ngày 01
 
 ## 1. Mục tiêu học tập hôm nay
+
 Hôm nay em bắt đầu làm quen với Git và GitHub, tập trung vào các thao tác cơ bản để quản lý mã nguồn và làm việc nhóm. Em muốn nắm rõ các khái niệm căn bản như khởi tạo repo, commit, push, pull, merge, stash và cách xử lý conflict.
 
 ## 2. Những gì em đã làm
+
 - Khởi tạo repository Git bằng lệnh `git init`.
 - Clone repository từ GitHub về máy bằng `git clone`.
 - Thực hành tạo file, thêm thay đổi vào staging area bằng `git add`.
@@ -20,6 +22,7 @@ Hôm nay em bắt đầu làm quen với Git và GitHub, tập trung vào các t
 - Tìm hiểu và xử lý một số tình huống conflict khi merge nhánh.
 
 ## 3. Kiến thức đã học
+
 - Git là công cụ quản lý phiên bản rất quan trọng trong lập trình.
 - `git init` dùng để khởi tạo repo mới.
 - `git add` cho phép đưa thay đổi vào vùng index trước khi commit.
@@ -46,11 +49,13 @@ Conflict xảy ra khi Git không thể tự quyết định phải giữ thay đ
 Nếu chưa muốn tiếp tục, có thể quay lại trạng thái trước đó bằng `git merge --abort`, `git rebase --abort` hoặc `git cherry-pick --abort` tương ứng. Trước khi hoàn tất, cần chạy kiểm thử hoặc kiểm tra lại tệp đã sửa để tránh giữ nhầm thay đổi.
 
 ## 5. Những khó khăn gặp phải
+
 - Ban đầu em còn nhầm lẫn giữa `git add`, `git commit` và `git push`.
 - Khi merge hoặc cherry-pick có conflict, em cần đọc kỹ lỗi và xử lý từng phần thay vì commit vội.
 - Cần luyện tập nhiều hơn để nhớ rõ thứ tự thao tác và ý nghĩa từng lệnh.
 
 ## 6. Kết luận
+
 Ngày hôm nay em đã có một buổi học thực hành Git cơ bản rất bổ ích. Em đã nắm được các lệnh quan trọng và cách làm việc với repository. Việc thực hành nhiều lần sẽ giúp em thành thạo hơn và tự tin hơn trong các dự án sau này.
 
 ## 7. Ảnh minh họa trong quá trình học
@@ -72,4 +77,5 @@ Ngày hôm nay em đã có một buổi học thực hành Git cơ bản rất b
 ![Git remote](/images/reports/day-01/git-remote.png)
 
 ## 8. Đánh giá cá nhân
+
 Em thấy mình cần tiếp tục luyện tập và ghi nhớ các lệnh Git theo từng mục đích sử dụng. Đây là nền tảng rất quan trọng cho các bài học và dự án sau này, vì vậy em sẽ dành thời gian ôn tập thêm mỗi ngày.

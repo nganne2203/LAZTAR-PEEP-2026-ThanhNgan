@@ -10,3 +10,4 @@ Báo cáo hàng ngày và ghi chú học tập của từng ngày làm việc.
 
 - [Tuần 01 - Ngày 01](week-01/day-01/)
 - [Tuần 01 - Ngày 02](week-01/day-02/)
+- [Tuần 01 - Ngày 03](week-01/day-03/)

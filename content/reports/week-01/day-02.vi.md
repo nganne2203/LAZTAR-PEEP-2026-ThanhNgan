@@ -1,5 +1,5 @@
 +++
-title = "Ngày 02 - React và Next.js"
+title = "Day 02 - 16/09/2026 (On-site)"
 weight = 2
 +++
 
