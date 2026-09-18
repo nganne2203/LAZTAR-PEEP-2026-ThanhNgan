@@ -1,104 +1,82 @@
+
 +++
-title = "Ngày 01 - 15/09/2026"
+title = "Day 01 - 15/09/2026 (On-site)"
 weight = 1
 +++
 
-## Topics Learned
+# Báo cáo ngày 01
 
-### Git
+## 1. Mục tiêu học tập hôm nay
 
-#### Các câu lệnh phổ biến
+Hôm nay em bắt đầu làm quen với Git và GitHub, tập trung vào các thao tác cơ bản để quản lý mã nguồn và làm việc nhóm. Em muốn nắm rõ các khái niệm căn bản như khởi tạo repo, commit, push, pull, merge, stash và cách xử lý conflict.
 
-| Lệnh               | Mô Tả                                            |
-| ------------------ | ------------------------------------------------ |
-| git init           | Khởi tạo kho lưu trữ Git mới                     |
-| git remote         | Quản lý kết nối kho lưu trữ từ xa                |
-| git clone          | Sao chép kho lưu trữ từ xa về máy cục bộ         |
-| git fetch          | Tải các thay đổi từ xa mà không hợp nhất         |
-| git pull           | Tải và hợp nhất các thay đổi từ xa               |
-| git status         | Hiển thị trạng thái hiện tại của kho lưu trữ     |
-| git branch         | Liệt kê, tạo hoặc xóa các nhánh                  |
-| git switch         | Chuyển sang nhánh khác                           |
-| git checkout       | Chuyển nhánh hoặc khôi phục tệp thư mục làm việc |
-| git add            | Chuẩn bị các thay đổi để commit                  |
-| git commit         | Ghi lại các thay đổi vào kho lưu trữ             |
-| git commit --amend | Sửa đổi commit cuối cùng                         |
-| git push           | Tải các commit cục bộ lên từ xa                  |
-| git reset          | Bỏ chuẩn bị hoặc đặt lại các commit              |
-| git rebase         | Áp dụng lại các commit trên một nhánh khác       |
-| git rebase -i      | Rebase tương tác để chỉnh sửa các commit         |
-| git stash          | Lưu các thay đổi chưa commit tạm thời            |
-| git stash pop      | Khôi phục các thay đổi đã lưu trữ                |
-| git merge          | Kết hợp các thay đổi từ nhánh khác               |
-| git cherry-pick    | Áp dụng các commit cụ thể từ nhánh khác          |
+## 2. Những gì em đã làm
 
-#### Xử Lý Xung Đột Git
+- Khởi tạo repository Git bằng lệnh `git init`.
+- Clone repository từ GitHub về máy bằng `git clone`.
+- Thực hành tạo file, thêm thay đổi vào staging area bằng `git add`.
+- Tạo commit mới với `git commit -m "..."`.
+- Đẩy code lên GitHub bằng `git push`.
+- Kiểm tra trạng thái repo bằng `git status`.
+- Thêm remote cho repo bằng `git remote add origin ...`.
+- Thực hành `git pull`, `git merge`, `git stash`, `git stash list`.
+- Tìm hiểu và xử lý một số tình huống conflict khi merge nhánh.
 
-| Tình Huống                                | Giải Pháp (Source Control)                                                                         |
-| ----------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| Giữ lại thay đổi từ cả hai nhánh          | Mở tệp trong trình soạn thảo, chỉnh sửa thủ công để bao gồm cả hai thay đổi, rồi nhập vào dấu ✓    |
-| Giữ lại thay đổi từ nhánh hiện tại        | Di chuột qua dấu xung đột và nhập nút "Accept Current Change"                                      |
-| Giữ lại thay đổi từ nhánh đến             | Di chuột qua dấu xung đột và nhập nút "Accept Incoming Change"                                     |
-| Hủy hợp nhất và bắt đầu lại               | Nhập biểu tượng Source Control ở thanh bên, rồi nhập menu "..." và chọn "Abort Merge"              |
-| Giải quyết xung đột trong trình soạn thảo | Xung đột được đánh dấu bằng màu sắc, chỉnh sửa thủ công hoặc sử dụng giao diện giải quyết xung đột |
+## 3. Kiến thức đã học
 
----
+- Git là công cụ quản lý phiên bản rất quan trọng trong lập trình.
+- `git init` dùng để khởi tạo repo mới.
+- `git add` cho phép đưa thay đổi vào vùng index trước khi commit.
+- `git commit` lưu lại phiên bản hiện tại của dự án.
+- `git push` đẩy thay đổi lên remote repository.
+- `git pull` đồng bộ code mới nhất từ remote về local.
+- `git merge` dùng để gộp nhánh vào nhánh chính.
+- `git stash` hữu ích khi muốn tạm thời lưu công việc đang làm mà không commit.
+- Khi merge có conflict, cần giải quyết thủ công rồi tiếp tục commit hoặc merge.
 
-### TypeScript
+## 4. Cách xử lý Git conflict
 
-#### Interface vs Type
+Conflict xảy ra khi Git không thể tự quyết định phải giữ thay đổi nào, thường do hai nhánh cùng chỉnh sửa một đoạn mã hoặc một tệp. Em thực hiện theo quy trình sau:
 
-- `interface` chủ yếu dùng để định nghĩa cấu trúc object và hỗ trợ kế thừa thông qua `extends`.
-- `type` linh hoạt hơn và có thể định nghĩa object, union, tuple, kiểu primitive và kiểu function.
-- Cả hai đều có thể dùng để mô tả cấu trúc object trong TypeScript.
+1. Kiểm tra các tệp đang xung đột bằng `git status`.
+2. Mở từng tệp, đọc các marker `<<<<<<<`, `=======` và `>>>>>>>` để phân biệt thay đổi ở nhánh hiện tại với thay đổi được đưa vào.
+3. Chỉnh sửa để chọn một thay đổi hoặc kết hợp cả hai; sau đó xóa toàn bộ marker conflict.
+4. Kiểm tra lại code, rồi đánh dấu tệp đã xử lý bằng `git add <ten-file>`.
+5. Hoàn tất thao tác đang thực hiện:
+   - Với merge: `git commit` hoặc `git merge --continue`.
+   - Với rebase: `git rebase --continue`.
+   - Với cherry-pick: `git cherry-pick --continue`.
 
-#### Union Type
+Nếu chưa muốn tiếp tục, có thể quay lại trạng thái trước đó bằng `git merge --abort`, `git rebase --abort` hoặc `git cherry-pick --abort` tương ứng. Trước khi hoàn tất, cần chạy kiểm thử hoặc kiểm tra lại tệp đã sửa để tránh giữ nhầm thay đổi.
 
-- Cho phép một biến nhận nhiều kiểu hoặc nhiều giá trị khác nhau.
-- Sử dụng toán tử `|` (OR).
+## 5. Những khó khăn gặp phải
 
-#### Omit Utility Type
+- Ban đầu em còn nhầm lẫn giữa `git add`, `git commit` và `git push`.
+- Khi merge hoặc cherry-pick có conflict, em cần đọc kỹ lỗi và xử lý từng phần thay vì commit vội.
+- Cần luyện tập nhiều hơn để nhớ rõ thứ tự thao tác và ý nghĩa từng lệnh.
 
-- Tạo một type mới bằng cách loại bỏ một hoặc nhiều thuộc tính từ type gốc.
-- Thường dùng để tái sử dụng model hoặc ẩn các field không cần thiết.
+## 6. Kết luận
 
-#### Extends
+Ngày hôm nay em đã có một buổi học thực hành Git cơ bản rất bổ ích. Em đã nắm được các lệnh quan trọng và cách làm việc với repository. Việc thực hành nhiều lần sẽ giúp em thành thạo hơn và tự tin hơn trong các dự án sau này.
 
-- Dùng để kế thừa thuộc tính từ interface khác.
-- Giúp tái sử dụng code và giảm lặp lại thuộc tính.
+## 7. Ảnh minh họa trong quá trình học
 
----
+![Git init](/images/reports/day-01/git-init.png)
 
-### ESLint
+![Git clone](/images/reports/day-01/git-clone.png)
 
-#### Purpose of ESLint
+![Git commit](/images/reports/day-01/git-commit.png)
 
-- Công cụ static code analysis cho JavaScript/TypeScript.
-- Giúp phát hiện lỗi và cảnh báo trước khi chạy chương trình.
-- Đảm bảo code tuân thủ coding convention của dự án.
+![Git merge](/images/reports/day-01/git-merge.png)
 
-#### Common Errors and Warnings
+![Git pull](/images/reports/day-01/git-pull.png)
 
-- `no-unused-vars`: Biến khai báo nhưng không sử dụng.
-- `no-undef`: Sử dụng biến chưa khai báo.
-- `react-hooks/rules-of-hooks`: Sử dụng Hook sai quy tắc.
-- `react-hooks/exhaustive-deps`: Thiếu dependency trong `useEffect`.
-- `no-magic-numbers`: Sử dụng số hard-code không có ý nghĩa rõ ràng.
+![Git stash](/images/reports/day-01/git-stash.png)
 
-## Lessons Learned
+![Git status](/images/reports/day-01/git-status.png)
 
-- Tránh **"magic number"**
-- Tránh commit node_modules.
-- Hiểu sự khác biệt giữa merge và rebase.
-- Sử dụng git add <file> thay vì git add . khi có thể.
+![Git remote](/images/reports/day-01/git-remote.png)
 
-## Key Principles
+## 8. Đánh giá cá nhân
 
-- Tổ chức `src/` theo tính năng hoặc loại
-- Tách các tệp cấu hình ở mức gốc
-- Luôn thêm `node_modules/` và `dist/` vào `.gitignore`
-- Sử dụng tên thư mục rõ ràng và mô tả
-- Nhóm các tệp liên quan lại với nhau để dễ dàng điều hướng
-
-
-## Result/Output
+Em thấy mình cần tiếp tục luyện tập và ghi nhớ các lệnh Git theo từng mục đích sử dụng. Đây là nền tảng rất quan trọng cho các bài học và dự án sau này, vì vậy em sẽ dành thời gian ôn tập thêm mỗi ngày.

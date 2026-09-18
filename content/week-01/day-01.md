@@ -1,99 +1,84 @@
+
 +++
-title = "Day 01 - 15/09/2026"
+title = "Day 01 - 15/09/2026 (On-site)"
 weight = 1
 +++
 
-## Topics Learned
+# Daily Report - Day 01
 
-### Git
+## 1. Today's learning goals
 
-#### Common Commands
+Today I started getting familiar with Git and GitHub, focusing on basic operations for source code management and teamwork. I want to clearly understand the fundamentals such as initializing a repo, committing, pushing, pulling, merging, stashing, and handling conflicts.
 
-| Command            | Meaning                                        |
-| ------------------ | ---------------------------------------------- |
-| git init           | Create a new Git repository                    |
-| git remote         | Manage connections to remote repositories      |
-| git clone          | Copy a remote repository to the local machine  |
-| git fetch          | Download remote changes without merging them   |
-| git pull           | Download and merge remote changes              |
-| git status         | Show the current repository state              |
-| git branch         | List, create, or delete branches               |
-| git switch         | Move to another branch                         |
-| git checkout       | Switch branches or restore files               |
-| git add            | Stage changes for the next commit              |
-| git commit         | Save staged changes to the repository history  |
-| git commit --amend | Update the latest commit                       |
-| git push           | Upload local commits to a remote repository    |
-| git reset          | Unstage changes or move commit history         |
-| git rebase         | Reapply commits on top of another branch       |
-| git rebase -i      | Edit, squash, or reorder commits interactively |
-| git stash          | Temporarily save uncommitted work              |
-| git stash pop      | Restore the latest stashed work                |
-| git merge          | Combine changes from another branch            |
-| git cherry-pick    | Apply a specific commit to the current branch  |
+## 2. What I did today
 
-#### Merge Conflict Handling
+- Initialized a Git repository using `git init`.
+- Cloned a repository from GitHub to my computer using `git clone`.
+- Practiced creating files and staging changes using `git add`.
+- Created a new commit with `git commit -m "..."`.
+- Pushed code to GitHub using `git push`.
+- Checked repository status with `git status`.
+- Added a remote using `git remote add origin ...`.
+- Practiced `git pull`, `git merge`, `git stash`, `git fetch` and `git stash list`.
+- Learned and handled conflict situations during branch merging.
 
-| Situation                        | Solution in Code Source Control                                     |
-| -------------------------------- | ------------------------------------------------------------------- |
-| Keep changes from both branches  | Open the file, edit the conflict manually, then mark it as resolved |
-| Keep the current branch version  | Use `Accept Current Change` in the conflict editor                  |
-| Keep the incoming branch version | Use `Accept Incoming Change` in the conflict editor                 |
-| Cancel the merge                 | Open Source Control, use the `...` menu, then choose `Abort Merge`  |
-| Resolve conflicts manually       | Review the marked conflict blocks and keep the correct final code   |
+## 3. Knowledge gained
 
-### TypeScript
+- Git is an essential version control tool in software development.
+- `git init` is used to create a new repository.
+- `git add` moves changes into the staging area before committing.
+- `git commit` saves the current state of the project.
+- `git push` uploads local changes to the remote repository.
+- `git pull` syncs the latest remote updates to the local repository.
+- `git merge` combines changes from another branch.
+- `git stash` is useful for temporarily saving work without committing.
+- When a merge has conflicts, they must be resolved manually before continuing.
 
-#### Interface vs Type
+## 4. Resolving Git conflicts
 
-- Use `interface` when the main goal is to describe object structure and support inheritance.
-- Use `type` when the shape is more complex, such as a union, tuple, primitive alias, or function type.
-- Both are valid for object modeling, so choose the one that fits the use case and team convention.
+A conflict occurs when Git cannot decide which change to keep, usually because two branches changed the same part of a file. I used this workflow:
 
-#### Union Type
+1. Run `git status` to identify conflicted files.
+2. Open each file and review the `<<<<<<<`, `=======`, and `>>>>>>>` markers to distinguish the current branch's change from the incoming change.
+3. Choose one change or combine both changes, then remove all conflict markers.
+4. Review the code and mark the file as resolved with `git add <file-name>`.
+5. Finish the operation in progress:
+   - Merge: `git commit` or `git merge --continue`.
+   - Rebase: `git rebase --continue`.
+   - Cherry-pick: `git cherry-pick --continue`.
 
-- A union type allows a value to have more than one possible type.
-- It uses the `|` operator.
+If I decide not to continue, I can return to the previous state with `git merge --abort`, `git rebase --abort`, or `git cherry-pick --abort`. Before completing the operation, I should run the relevant tests or review the edited file to avoid retaining an incorrect change.
 
-#### Omit Utility Type
+## 5. Challenges encountered
 
-- `Omit` creates a new type by removing one or more properties from an existing type.
-- It is useful when reusing a model but hiding fields that are not needed.
+- At first, I was confused between `git add`, `git commit`, and `git push`.
+- During merge and cherry-pick operations, I had to read the error carefully and handle each conflict carefully instead of rushing to commit.
+- I need more practice to remember the exact sequence of commands and their purposes.
 
-#### Extends
+## 6. Conclusion
 
-- `extends` lets an interface inherit properties from another interface.
-- It reduces duplication and keeps related types consistent.
+Today was a very useful Git practice session. I learned important commands and how to work with a repository. Repeating these practices regularly will help me become more confident and proficient in future projects.
 
----
+## 7. Visual notes from the learning process
 
-### ESLint
+![Git init](/images/reports/day-01/git-init.png)
 
-#### Purpose of ESLint
+![Git clone](/images/reports/day-01/git-clone.png)
 
-- ESLint is a static analysis tool for JavaScript and TypeScript.
-- It helps detect errors and warnings before runtime.
-- It keeps code aligned with project conventions.
+![Git commit](/images/reports/day-01/git-commit.png)
 
-#### Common Errors and Warnings
+![Git merge](/images/reports/day-01/git-merge.png)
 
-- `no-unused-vars`: a variable is declared but not used.
-- `no-undef`: a variable is used before it is defined.
-- `react-hooks/rules-of-hooks`: React Hooks are used in the wrong place.
-- `react-hooks/exhaustive-deps`: a `useEffect` dependency is missing.
-- `no-magic-numbers`: a hard-coded number is used without clear meaning.
+![Git pull](/images/reports/day-01/git-pull.png)
 
-## Lessons Learned
+![Git stash](/images/reports/day-01/git-stash.png)
 
-- Avoid **"magic numbers"**.
-- Do not commit `node_modules`.
-- Understand the difference between merge and rebase.
-- Use `git add <file>` instead of `git add .` when possible.
+![Git status](/images/reports/day-01/git-status.png)
 
-### Key Principles
+![Git remote](/images/reports/day-01/git-remote.png)
 
-- Organize `src/` by feature or by file type.
-- Keep configuration files at the project root.
-- Always add `node_modules/` and `dist/` to `.gitignore`.
-- Use clear and descriptive folder names.
-- Group related files together for easier navigation.
+![Git fetch](/images/reports/day-01/git-fetch.png)
+
+## 8. Personal evaluation
+
+I need to keep practicing and memorizing Git commands according to their specific use cases. This is a crucial foundation for future learning and projects, so I will spend more time reviewing it every day.

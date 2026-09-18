@@ -1,40 +1,56 @@
 +++
-title = "Ngày 04 - 19/06/2026"
-weight = 4
+title = "Ngày 04 - 18/09/2026 (Remote)"
+weight = 3
 +++
 
-## Việc đã làm
+# Báo cáo ngày 04
 
-### 1. Bổ sung, chỉnh sửa các diagram cho project_2 PEEP2026
+- **Hình thức làm việc:** Remote
+- **Dự án:** Landing page StudyFlow AI
 
-- Use Case Diagram: Bổ sung use case "View Internal Statistics" cho actor Admin 
+## A. Công việc thực hành
 
-- Class Diagram: vẽ class diagram cho
-  - Web Admin
-	- Mobile Application
+### 1. Mục tiêu
 
-- Vẽ State Machine Diagram cho:
-	- OrderStatus
-	- PaymentStatus
+Hôm nay tôi refactor source code của landing page StudyFlow AI và bổ sung phiên bản tiếng Việt. Mục tiêu là cho phép người dùng chuyển đổi giữa tiếng Anh và tiếng Việt nhưng vẫn dùng chung một bộ component dễ bảo trì. Tiếng Anh là ngôn ngữ mặc định.
 
-### 2. Tìm hiểu các SKILLS đã được tích hợp trong dự án
+### 2. Refactor source code
 
-#### Mục tiêu
+- Chuyển phần ghép các section của trang vào component LandingPage dùng chung. Hai route ngôn ngữ hiện sử dụng cùng một giao diện thay vì duy trì hai trang riêng biệt.
+- Tạo module đa ngôn ngữ có kiểu dữ liệu TypeScript cho nội dung tiếng Anh và tiếng Việt. Các kiểu Locale và SiteCopy giúp xác định rõ cấu trúc nội dung cần có.
+- Cập nhật navbar, hero, phần nêu vấn đề, sáu thẻ tính năng, demo tương tác, quy trình ba bước, dashboard mẫu, số liệu, nhận xét, bảng giá, FAQ, lời kêu gọi hành động cuối trang và footer để nhận nội dung theo ngôn ngữ qua props.
+- Đưa nhãn giao diện, phần mô tả, dữ liệu mẫu, câu hỏi gợi ý, câu trả lời FAQ và phản hồi mô phỏng của demo vào dữ liệu ngôn ngữ. Cách này tách nội dung khỏi phần trình bày và giúp sửa copy về sau dễ hơn.
+- Giữ nguyên phạm vi bản xem trước frontend. Câu trả lời AI, số liệu, nhận xét và mức giá vẫn là dữ liệu demo; không thêm backend hoặc API AI thật.
 
-Nắm được repo này đã chuẩn hoá những workflow gì, nằm ở đâu, và khi nào nên dùng.
+### 3. Phiên bản tiếng Việt và chuyển đổi ngôn ngữ
 
-#### Đã tìm hiểu được
+- Giữ landing page tiếng Anh ở URL gốc và thêm trang tiếng Việt tại /vi.
+- Thêm nút chuyển EN/VI trên navbar, có trạng thái thể hiện ngôn ngữ hiện tại và vẫn hiển thị trên phần đầu trang responsive.
+- Thiết lập thuộc tính ngôn ngữ HTML và metadata riêng cho từng route, đồng thời khai báo liên kết đến phiên bản ngôn ngữ còn lại cho công cụ tìm kiếm.
+- Dịch nội dung landing page, nhãn dashboard, bảng giá, FAQ và demo tương tác. Demo nhận diện các từ khóa câu hỏi bằng tiếng Việt và trả về phản hồi mẫu bằng tiếng Việt.
+- Điều chỉnh khoảng cách chữ và cách hiển thị thanh điều hướng để nội dung tiếng Việt dài hơn vẫn phù hợp trên màn hình nhỏ.
 
-Project này có 2 folder chứa skill là: .agents/skills và .claude/skills. Cả 2 đều chứa cùng một nhóm skill chính, nên có thể hiểu là project đang duy trì bộ hướng dẫn cho nhiều agent/context khác nhau.
+### 4. Kiểm tra
 
-Các skill được chia theo từng các loại task như sau:
+- ESLint chạy thành công, không có lỗi.
+- Production build và bước kiểm tra kiểu TypeScript hoàn thành thành công.
+- Kết quả build tạo hai route tĩnh: / cho tiếng Anh và /vi cho tiếng Việt.
 
-1. `add-backend-endpoint`: được dùng khi cần thêm, mở rộng API backend theo chuẩn NextJS của repo. Bao gồm module, controller, service, DTO, constants, auth và test.
-2. `add-env-var`: dùng khi cần thêm biến môi trường cho backend, đảm bảo có validate lúc app boot, có cập nhật .env.example
-3. `add-mobile-screen`: dùng khi thêm màn hình ở mobile hoặc thêm API call ở Expo, bám theo convention có sẵn của navigation, theme, i18n và TanStack Query
-4. `prisma-migration`: dùng khi sửa schema Prisma hoặc thay đổi database. Skill này nhấn mạnh việc tạo migration incremental, không sửa migration cũ đã commit
-5. `production-readiness`: dùng để rà checklist trước khi deploy như là env thật, migration, push notification, bảo mật, CI và verify gate
-6. `troubleshoot`: dùng khi gặp lỗi môi trường, lỗi command, lỗi commit hook, lỗi TypeScript, lỗi Auth/IAP hoặc lỗi FCM
-7. `write-tests`: dùng khi cần thêm test cho backend hoặc mobile
+## B. Tổng kết
 
-**Tổng kết**: bộ skill nnay đầy đủ các nhóm việc quan trọng, từ backend, mobile, database migration, env config, test, troubleshoot và readiness trước production.
+### Những gì tôi học được
+
+- Tập trung bản dịch trong một module có kiểu dữ liệu rõ ràng giúp giao diện đa ngôn ngữ dễ kiểm tra và bảo trì.
+- Dùng chung cây component giúp bố cục của hai phiên bản không bị lệch nhau khi thay đổi giao diện.
+- Đa ngôn ngữ không chỉ là dịch tiêu đề: nhãn form, nội dung hỗ trợ accessibility, metadata, phản hồi mẫu và khoảng cách responsive cũng cần được xử lý.
+
+### Khó khăn và cách giải quyết
+
+- **Nhiều đoạn tiếng Anh được viết trực tiếp trong component:** Tôi chuyển chúng sang nội dung theo ngôn ngữ truyền qua props và dùng chung LandingPage cho hai route.
+- **Nội dung tiếng Việt thường dài hơn:** Tôi điều chỉnh letter spacing của heading và breakpoint của menu để nút chọn ngôn ngữ cùng thanh điều hướng có đủ chỗ.
+- **Demo trước đây chỉ nhận diện từ khóa tiếng Anh:** Tôi bổ sung từ khóa tiếng Việt và phản hồi mẫu tương ứng, đồng thời giữ toàn bộ tương tác ở phía trình duyệt.
+
+## URL PAGE
+
+- Repository dự án: [StudyFlowAI trên GitHub](https://github.com/nganne2203/StudyFlowAI)
+- Bản xem trước công khai: [StudyFlowAI trên Verce](https://studyflowai-eta.vercel.app)

@@ -1,104 +1,295 @@
+
 +++
-title = "Day 02 - 16/06/2026"
+title = "Day 02 - 16/09/2026 (On-site)"
 weight = 2
 +++
 
-## Completed Work
+# Daily Report - Day 02
 
-Today I focused on cloning the source code, reading the README/instruction files across the project, and running the main parts of the system. The goal was to make sure the local setup works, confirm the connection between Backend, Mobile, and Web Admin, and understand the team workflow before starting feature development.
+## A. Theory
 
-### Setup Results
+## Part 1. React fundamentals
 
-| Completed | Item |
-| --- | --- |
-| [x] | Cloned the source code to my local machine. |
-| [x] | Read the README and instruction files in the main project folders. |
-| [x] | Successfully ran the Backend. |
-| [x] | Successfully ran the Frontend/Web Admin. |
-| [x] | Successfully ran the Mobile app on Android. |
-| [x] | Successfully ran the Mobile app on iOS. |
-| [x] | Checked the initial connection between Backend, Mobile, and Web Admin. |
-| [x] | Noted important setup steps for future development. |
+### 1. What is React?
 
-## Understanding From Project
+React is an open-source JavaScript library for building user interfaces from reusable components. It focuses on the UI layer; routing, API servers, and deployment are normally provided by other libraries or frameworks.
 
-### Project Overview
+### 2. What is a React component? How many component types are there?
 
-- The project is a monorepo with `backend/`, `mobile/`, `frontend/`, and `specs/`.
-- Backend and Mobile are the main parts of the system.
-- Web Admin only needs to be basic, mainly for internal management and statistics.
-- Each package is independent, so dependencies should be installed inside each package folder.
-- Bun is the main package manager.
-- The root guide should be read first, then each package guide should be checked for detailed commands and conventions.
+A component is an independent UI block that receives input and returns JSX. There are two main component types:
 
-### Backend
+- **Function Component:** A JavaScript function that returns JSX. It is the common modern approach and can use Hooks.
+- **Class Component:** A class that extends `React.Component`, implements `render()`, and uses lifecycle methods. It remains supported but is mostly found in older projects.
 
-- Backend uses NestJS v11, TypeScript strict mode, Prisma v7, PostgreSQL, and Redis.
-- Backend provides APIs for Mobile and Web Admin.
-- API routes use the `/api/v1` prefix, so Mobile/Web API configuration must match it.
-- Important modules include auth, users, user settings, subscription, IAP, notifications, file upload, AWS S3, Redis, Firebase, and Prisma.
-- Auth supports JWT, refresh token rotation, Google Sign-In, and Apple Sign-In.
-- Redis is used for refresh tokens, rate limiting, and session-related logic.
-- Prisma manages the database schema, migrations, and seed data.
-- Database changes must use new migrations instead of editing committed migrations.
-- Required environment variables include `DATABASE_URL`, `JWT_SECRET`, `ENCRYPTION_KEY`, `REDIS_URL`, and S3 config.
-- The backend has commands for typecheck, build, lint, and test.
+### 3. What is JSX?
 
-### Mobile
+JSX is a JavaScript syntax extension that describes UI with HTML-like markup. It is compiled into calls that create React elements. JavaScript expressions are placed inside `{}`, and JSX must return a valid element tree.
 
-- Mobile uses Expo v54, React Native 0.81, TypeScript strict mode, and NativeWind.
-- Expo Go is not supported because the app uses native modules; a development build is required.
-- The app can run on both Android and iOS.
-- The source structure includes API client, navigation, screens, store, theme, hooks, services, and shared components.
-- Mobile uses TanStack Query and Axios for API requests.
-- Zustand is used for local state such as auth session, tokens, theme, and locale.
-- Sensitive tokens are stored in SecureStore; less sensitive data can use AsyncStorage.
-- `EXPO_PUBLIC_API_URL` must point to the backend and end with `/api`; endpoints add `/v1`.
-- The app already has scaffolding for Google Sign-In, Apple Sign-In, and Firebase config.
-- Existing components, theme tokens, and helpers should be reused to keep UI consistent.
+### 4. What are props?
 
-### Web Admin / Frontend
+Props are values passed from a parent component to a child component. They make components configurable and reusable with different data. A receiving component should read props without mutating them directly.
 
-- Frontend is the basic Web Admin and follows a Next.js structure.
-- The frontend README is still simple and mainly explains how to run the development server.
-- The frontend instruction file notes that the current Next.js version may have API and convention changes, so related docs should be checked before editing.
-- Web Admin should focus on internal features such as data lists, user management, dashboards, and basic admin actions.
-- Complex Web Admin features should not be prioritized in the first stage.
+### 5. What is state? How is state different from props?
 
-### Specs and Development Workflow
+State is internal data that a component remembers between renders. Updating state through its setter schedules another render.
 
-- The `specs/` folder supports spec-driven development.
-- For larger features, requirements and UI materials should be placed in `specs/<feature>/inputs/`.
-- `spec.md` describes requirements, API, UI, edge cases, and test direction.
-- `testcases.md` records manual QC test cases.
-- This flow helps the team understand requirements clearly before coding.
-- When scope changes, specs and test cases should be updated too.
+- **State:** Managed by the component, updated through a setter, and commonly represents interactive data.
+- **Props:** Owned and passed by the parent, read-only in the child, and changed when the parent provides a new value.
 
-### Firebase and Assets
+### 6. What is the Virtual DOM? Why does React use it?
 
-- Mobile Firebase config is organized by environment and platform, such as development/staging/production and Android/iOS.
-- Real Firebase config files are ignored by Git, so they must be added correctly during setup.
-- `app.config.ts` can auto-detect Firebase files when they are placed in the expected folders.
-- Mobile local images are organized in separate folders for each asset.
-- Icons and UI images should provide `1x`, `2x`, and `3x` densities when possible.
-- After adding or renaming images, the image index should be regenerated.
+The Virtual DOM is a JavaScript representation of the UI tree. When props or state change, React creates a new tree, compares it with the previous tree through reconciliation, and updates the necessary parts of the real DOM. This enables declarative UI code, reduces manual DOM manipulation, and coordinates UI updates consistently.
 
-### Team Workflow
+### 7. What are Hooks? Name some common React Hooks.
 
-- Tasks should be split into small, clear items.
-- Before coding, the related README and package conventions should be checked.
-- Commits should have clear messages.
-- Pull Requests should be created for team review before merging.
-- Typecheck, build, lint, and test should be run before commit/push when possible.
-- Setup issues or missing README information should be reported early.
-- Clear communication with UI/UX helps avoid misunderstanding screens and user flows.
+Hooks are functions that let Function Components use state, effects, context, refs, and other React capabilities. Common Hooks include:
 
+- **`useState`:** Stores and updates local state.
+- **`useEffect`:** Synchronizes a component with an external system.
+- **`useContext`:** Reads and subscribes to a Context value.
+- **`useReducer`:** Manages state with complex update logic in a reducer.
+- **`useRef`:** Stores a value without re-rendering or references a DOM node.
+- **`useMemo`:** Caches a calculated value between renders.
+- **`useCallback`:** Caches a function between renders.
 
-## Lessons Learned
+Hooks must be called at the top level of a Function Component or custom Hook, not inside loops or conditions.
 
-- Before developing features, the whole project should run successfully.
-- README files help explain the tech stack, folder structure, setup steps, run commands, and contribution workflow.
-- Backend, Mobile, and Web Admin must use the correct API URL to connect with each other.
-- Common setup issues can come from missing environment variables, wrong ports, inactive database/Redis, or using the wrong run command.
-- Simple and practical features should be prioritized over complex or research-heavy features.
-- Getting familiar with tasks, commits, PRs, and review early helps the team collaborate better.
+### 8. What does `useState` do?
+
+`useState` declares a state variable and its update function. For example, `const [count, setCount] = useState(0)`. Calling `setCount` stores the new value and schedules a render. Objects and arrays in state should be replaced with new values instead of mutated directly.
+
+### 9. What does `useEffect` do?
+
+`useEffect` synchronizes a component with an external system, for example:
+
+- Fetching or synchronizing client-side API data.
+- Adding and removing event listeners.
+- Starting and clearing timers.
+- Connecting to and disconnecting from a WebSocket or third-party library.
+
+An effect can return a cleanup function. Its dependency array determines when synchronization runs again. If no external system is involved, an effect is often unnecessary.
+
+### 10. What stages are in a React component lifecycle?
+
+A component lifecycle has three main stages:
+
+- **Mounting:** The component is created and added to the screen.
+- **Updating:** The component renders again when props, state, or context changes.
+- **Unmounting:** The component is removed; listeners, timers, and connections should be cleaned up.
+
+In Function Components, `useEffect` sets up synchronization and its cleanup stops it. In Class Components, common methods are `componentDidMount`, `componentDidUpdate`, and `componentWillUnmount`.
+
+### 11. What is Client-Side Rendering (CSR)?
+
+CSR means that the browser loads JavaScript and renders the UI on the client. After the first load, the application can update UI and navigate without downloading a complete new HTML document. Large bundles can delay initial content, and SEO may require additional handling.
+
+### 12. What is React Router?
+
+React Router is a routing library for React applications. It supports:
+
+- Client-side navigation without a full-page reload.
+- Nested routes for nested UI.
+- Dynamic routes with URL parameters.
+- Query-string access and navigation-history management.
+
+React Router is an independent library, not part of React core.
+
+### 13. Does plain React support routing, SEO, and an API server?
+
+React core does not include these features:
+
+- **Routing:** Requires React Router or another solution.
+- **SEO:** Client metadata is possible, but crawler-friendly pre-rendered HTML normally requires SSR/SSG or a framework.
+- **API server:** Requires a separate backend such as Express or NestJS, or a full-stack framework.
+
+### 14. What is the Context API? When should it be used?
+
+The Context API supplies data to multiple components in a tree without passing props through every level. It suits shared values such as theme, locale, authentication information, or application configuration. Frequently changing state should not all be placed in one large context because many consumers can re-render; complex state can use split contexts or a suitable state-management solution.
+
+### 15. What is an SPA (Single Page Application)?
+
+An SPA loads one application shell and changes content mainly with JavaScript and client-side navigation. Route changes do not require a complete page reload. SPAs provide app-like interaction but must address first load, SEO, accessibility, and browser history. An SPA may still use SSR or SSG for its initial load.
+
+## Part 2. React compared with Next.js
+
+### 1. What is Next.js?
+
+Next.js is a full-stack framework built on React. It provides file-based routing, server and build-time rendering, asset optimization, metadata, Route Handlers, and a build/deployment workflow.
+
+### 2. What is the core difference between React and Next.js?
+
+- **React:** A component-based UI library that does not prescribe complete routing, server rendering, or backend architecture.
+- **Next.js:** A framework that uses React and adds conventions and tools for building complete web applications.
+
+### 3. How does routing differ between React and Next.js?
+
+- **React:** Has no built-in router. Projects commonly install React Router and declare routes in code.
+- **Next.js:** Has file-based routing. Folders and files such as `app/about/page.tsx` create the `/about` route.
+
+### 4. How does rendering differ between React and Next.js?
+
+- **Plain React:** Commonly uses CSR when created with Vite or a similar tool. SSR/SSG requires additional setup or a framework.
+- **Next.js:** Supports static rendering, dynamic server rendering, streaming, and client rendering, and can compose Server Components with Client Components.
+
+### 5. Why does Next.js support SEO better than plain React?
+
+Next.js can send rendered HTML and metadata from the server or build output. Search engines receive content, titles, descriptions, Open Graph data, and canonical information earlier. Plain React can also provide good SEO, but pre-rendering/SSR and metadata management must be added separately.
+
+### 6. How does first-load performance differ between React and Next.js?
+
+- **React CSR:** Commonly loads, parses, and executes JavaScript before the complete UI appears.
+- **Next.js:** Can deliver rendered HTML, stream content, prefetch routes, and reduce client JavaScript with Server Components.
+
+Next.js is not automatically faster in every project; bundle size, images, data fetching, caching, and implementation still determine the result.
+
+### 7. How do React and Next.js project structures differ?
+
+- **React:** Imposes no structure; teams organize `components/`, `pages/`, `hooks/`, routing, and API clients themselves.
+- **Next.js:** Provides conventions such as `app/` or `pages/`, `public/`, `page.tsx`, `layout.tsx`, `loading.tsx`, `error.tsx`, and `route.ts`.
+
+### 8. Does Next.js replace React? Why?
+
+No. Next.js uses React to build components and UI. React is the UI foundation, while Next.js is a framework in the React ecosystem that adds routing, rendering, and server capabilities.
+
+### 9. When should plain React be used, and when should Next.js be used?
+
+- **Use plain React:** For internal dashboards, client-side SPAs, embedded widgets, or projects that already have separate backend and routing architecture.
+- **Use Next.js:** For SEO-sensitive websites, landing pages, blogs, e-commerce, applications requiring SSR/SSG/ISR, or projects that want UI and server endpoints in one framework.
+
+## Part 3. Next.js
+
+### 1. What are the App Router and Pages Router in Next.js?
+
+- **App Router:** Uses `app/`; supports Server Components, nested layouts, streaming, Route Handlers, and modern React features. It is preferred for new projects.
+- **Pages Router:** Uses `pages/`; each file maps to a route and can use `getStaticProps` and `getServerSideProps`. It remains supported for existing projects.
+
+### 2. How do Server Components and Client Components differ?
+
+- **Server Component:** The App Router default; renders on the server, can access server data and secrets, and reduces browser JavaScript. It cannot use state, event handlers, or browser APIs.
+- **Client Component:** Begins with `'use client'`; can use state, Hooks, event handlers, and APIs such as `window` or `localStorage`. Props received across the server-client boundary must be serializable.
+
+### 3. What is SSR (Server-Side Rendering)?
+
+SSR generates HTML on the server for every request. It suits request-fresh data, personalized content, or values based on cookies and headers. The server must process each request, and response time depends on data retrieval.
+
+### 4. What is SSG (Static Site Generation)?
+
+SSG creates HTML at build time and serves it from a cache or CDN. It suits landing pages, documentation, and stable blogs. It loads quickly and reduces server work, but content requires a rebuild or revalidation to update.
+
+### 5. What is ISR (Incremental Static Regeneration)?
+
+ISR refreshes static pages after a time interval or on demand without rebuilding the entire site. Its purposes are:
+
+- Serving most requests with fast static pages.
+- Updating content periodically.
+- Reducing build time for sites with many pages.
+- Reducing server work compared with SSR on every request.
+
+### 6. How does file-based routing work in Next.js?
+
+In the App Router, every folder is a route segment and `page.tsx` makes the route accessible. Examples:
+
+- `app/page.tsx` → `/`
+- `app/about/page.tsx` → `/about`
+- `app/blog/[slug]/page.tsx` → `/blog/:slug`
+
+Special files such as `layout.tsx`, `loading.tsx`, and `error.tsx` add UI and behavior to a segment.
+
+### 7. What is a dynamic route in Next.js?
+
+A dynamic route uses a bracketed segment to receive a URL parameter:
+
+- **`[id]`:** One dynamic segment, such as `/products/123`.
+- **`[...slug]`:** A catch-all route that receives one or more segments.
+- **`[[...slug]]`:** An optional catch-all that also matches no segment.
+
+### 8. What does `layout.tsx` do in the App Router?
+
+`layout.tsx` defines shared UI for a route segment and its children. It commonly contains a header, navigation, footer, or provider. Layouts nest according to the folder tree, preserve state, and do not re-render when navigating between pages that share the layout.
+
+### 9. What are API Routes (Route Handlers) in Next.js?
+
+Route Handlers create HTTP endpoints with a `route.ts` file inside `app/`. Supported methods include:
+
+- **`GET`:** Reads data.
+- **`POST`:** Creates data or processes a submission.
+- **`PUT`/`PATCH`:** Updates data.
+- **`DELETE`:** Deletes data.
+- **`HEAD`/`OPTIONS`:** Handles response metadata or HTTP communication capabilities.
+
+In the Pages Router, API Routes live in `pages/api/`.
+
+### 10. What are `getStaticProps` and `getServerSideProps`? When are they used?
+
+These are Pages Router APIs:
+
+- **`getStaticProps`:** Runs at build time to fetch props and generate a static page; use it for cacheable or infrequently changing data.
+- **`getServerSideProps`:** Runs on the server for every request; use it for request-fresh or personalized data.
+
+They are not used in the App Router, where Server Components fetch data directly with cache and revalidation configuration.
+
+### 11. How does `next/image` optimize images?
+
+`next/image` supports:
+
+- Delivering an image size appropriate for the device.
+- Lazy-loading images as they approach the viewport.
+- Preventing layout shift with a known image size or ratio.
+- Optimizing local and remote images through the image pipeline.
+
+Remote sources must be allowed in `next.config.*`, and images need `width`/`height` or `fill`.
+
+### 12. What is Middleware in Next.js?
+
+Middleware runs before a request completes and can redirect, rewrite, modify request/response headers, or return a response. Common uses include lightweight access checks, locale handling, and redirects. Slow work or heavy database queries should not run there. In newer Next.js versions, this convention is named **Proxy**, while its role of intercepting requests before routes remains similar.
+
+### 13. How can users navigate between pages in Next.js?
+
+- **`<Link href="/about">`:** Declarative internal navigation with prefetching and client-side transitions.
+- **`useRouter().push()` or `replace()`:** Programmatic navigation from a Client Component, such as after form submission.
+- **`redirect()`:** Redirects from a suitable Server Component, Server Action, or Route Handler.
+
+### 14. How are metadata and SEO handled in Next.js?
+
+In the App Router:
+
+- **`metadata`:** Defines static metadata in `layout.tsx` or `page.tsx`.
+- **`generateMetadata`:** Produces dynamic metadata from params or fetched data.
+- **File conventions:** `favicon.ico`, `opengraph-image`, `twitter-image`, `robots.txt`, and `sitemap.xml`.
+
+Next.js creates the related head tags. SEO still depends on useful content, semantic HTML, canonical URLs, performance, and accessibility.
+
+### 15. Does Next.js support TypeScript?
+
+Yes. `create-next-app` can initialize a TypeScript project, install the required types, and create initial configuration. Next.js supports `.ts` and `.tsx` files, page/layout/route types, and type checking during development or builds.
+
+### 16. Which platforms can deploy a Next.js project?
+
+- **Vercel:** Direct Next.js and Git integration.
+- **Node.js server:** Runs with `next build` and `next start`.
+- **Docker/container:** Packages the application for cloud or private infrastructure.
+- **Cloud platforms with a compatible adapter/runtime:** Examples include AWS, Google Cloud, Azure, Netlify, or Cloudflare, depending on features and adapters.
+- **Static hosting:** Works for static export, but does not provide every server-dependent feature.
+
+The deployment platform must support the project's requirements, such as SSR, ISR, Route Handlers, image optimization, or Proxy/Middleware.
+
+## B. Summary
+
+### What I learned
+
+- **HTML/CSS:** Use semantic HTML to organize the landing page and Flexbox/Grid, spacing, colors, and typography to create a consistent layout.
+- **React and Next.js:** Split the UI into reusable components, pass data through props, and understand when state is needed. Distinguish the App Router, Server Components, and Client Components when choosing how to build a page.
+- **Responsive design:** Adapt the layout with CSS media queries; test screen sizes in DevTools and adjust navigation, content columns, text, and images for smaller devices.
+- **Page optimization:** Pay attention to image sizes, alternative text, metadata, and links so the page remains usable and loads efficiently.
+- **Vercel deployment:** Understand the workflow of pushing code to Git, connecting the repository to Vercel, running the build, and checking the deployed URL.
+
+### Challenges and how I addressed them
+
+- **Distinguishing React from Next.js and the rendering approaches:** Compare the roles of library and framework, then use separate examples of CSR, SSR, SSG, and ISR to choose an approach for each type of content.
+- **Layout overflow or misalignment on small screens:** Check each breakpoint in DevTools, stack columns, adjust spacing, and keep images within their containers.
+- **Images or links working locally but failing after deployment:** Check paths and remote image configuration when using `next/image`, inspect Vercel build logs, and retest all links on the deployed site.
+
+## URL PAGE
+
+* Link landing page: [portfolio-nganne2203s-projects.vercel.app](https://portfolio-nganne2203s-projects.vercel.app/)
+* Link Repo: [github.com/nganne2203/Portfolio](https://github.com/nganne2203/Portfolio)
