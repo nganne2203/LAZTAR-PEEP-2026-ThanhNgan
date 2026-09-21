@@ -1,4 +1,3 @@
-
 +++
 title = "Ngày 03 - 17/09/2026 (Remote)"
 weight = 3
@@ -6,8 +5,8 @@ weight = 3
 
 # Báo cáo ngày 03
 
-**Hình thức làm việc:** Remote
-**Dự án:** Landing page StudyFlow AI
+* **Hình thức làm việc:** Remote
+* **Dự án:** Landing page StudyFlow AI
 
 ## A. Công việc thực hành
 
