@@ -1,6 +1,6 @@
 +++
 title = "Ngày 04 - 18/09/2026 (Remote)"
-weight = 3
+weight = 4
 +++
 
 # Báo cáo ngày 04
