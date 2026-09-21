@@ -1,58 +1,59 @@
+
 +++
-title = "Ngày 03 - 17/09/2026 (Remote)"
+title = "Day 03 - 17/09/2026 (Remote)"
 weight = 3
 +++
 
-# Báo cáo ngày 03
+# Daily Report - Day 03
 
-* **Hình thức làm việc:** Remote
-* **Dự án:** Landing page StudyFlow AI
+* **Work format:** Remote
+* **Project:** StudyFlow AI landing page
 
-## A. Công việc thực hành
+## A. Practical work
 
-### 1. Mục tiêu
+### 1. Objective
 
-Hôm nay tôi làm việc từ xa và thực hiện landing page cho StudyFlow AI. Đây là ý tưởng về một trợ lý học tập ứng dụng AI, giúp học sinh và sinh viên hiểu những khái niệm khó, tóm tắt tài liệu, luyện tập bằng câu hỏi, lập kế hoạch học và theo dõi tiến độ. Mục tiêu của tôi là chuyển ý tưởng sản phẩm thành một giao diện frontend có khả năng tương tác, hiển thị tốt trên nhiều thiết bị và phù hợp để đưa vào portfolio.
+Today I worked remotely and built the landing page for StudyFlow AI. This is an idea for an AI-powered learning assistant that helps students understand difficult concepts, summarize documents, practice with questions, create study plans, and track progress. My goal was to turn the product idea into an interactive front-end interface that works well across devices and is suitable for a portfolio.
 
-### 2. Xác định sản phẩm và lập kế hoạch UI/UX
+### 2. Product definition and UI/UX planning
 
-- Xác định tên sản phẩm, tagline, nhóm người dùng mục tiêu, vấn đề cần giải quyết, giá trị cốt lõi, các tính năng và lời kêu gọi hành động trước khi viết giao diện.
-- Sắp xếp luồng nội dung từ hero và phần giới thiệu sản phẩm đến demo tương tác, bản xem trước dashboard, bảng giá, FAQ và lời kêu gọi hành động cuối trang.
-- Tạo wireframe dạng văn bản cho desktop và mobile, hệ thống thiết kế, quy tắc responsive, yêu cầu accessibility và kế hoạch triển khai trong tài liệu của dự án.
-- Chọn phong cách SaaS hiện đại, gọn gàng với chữ dễ đọc, khoảng trắng rộng, thẻ bo góc, đường viền nhẹ và màu tím làm điểm nhấn. Các bản xem trước giao diện sản phẩm là trọng tâm hình ảnh của trang.
+- Define the product name, tagline, target user group, problem to solve, core value, features, and call to action before writing the interface.
+- Arrange the content flow from the hero and product introduction to the interactive demo, dashboard preview, pricing table, FAQ, and final call to action.
+- Create text-based wireframes for desktop and mobile, a design system, responsive rules, accessibility requirements, and implementation plans in the project documentation.
+- Choose a modern SaaS style with clean typography, generous spacing, rounded cards, subtle borders, and purple as the main accent color. Product preview mockups are the visual focus of the page.
 
-### 3. Triển khai landing page
+### 3. Landing page implementation
 
-- Xây dựng trang bằng Next.js App Router, React, TypeScript, Tailwind CSS, Motion và biểu tượng Lucide. Vì dự án hiện tại đã dùng Next.js, tôi tiếp tục dùng framework này thay vì cài thêm Vite hoặc React Router.
-- Tách giao diện thành các component cho layout, từng section và thành phần UI dùng chung. Dữ liệu về tính năng, gói giá, nhận xét, FAQ và câu hỏi mẫu được quản lý riêng với kiểu dữ liệu TypeScript rõ ràng.
-- Hoàn thành thanh điều hướng, hero có giao diện hội thoại, dải chủ đề học tập, phần nêu vấn đề, sáu thẻ tính năng, quy trình ba bước, bản xem trước dashboard, số liệu mẫu, ba nhận xét hư cấu, ba gói giá, FAQ, lời kêu gọi hành động cuối trang và footer.
-- Tạo demo AI hoàn toàn ở frontend: chọn câu hỏi gợi ý hoặc nhập câu hỏi riêng, hiển thị trạng thái chờ và hiệu ứng gõ chữ, nhận phản hồi mẫu, chọn câu hỏi tiếp theo và đặt lại cuộc hội thoại. Demo không gọi dịch vụ AI thật.
-- Thiết kế menu mobile và bố cục responsive cho hero, các thẻ, demo, dashboard, bảng giá và footer. Bổ sung cấu trúc heading hợp lý, điều khiển bằng bàn phím, trạng thái focus rõ ràng, trạng thái FAQ cho công cụ hỗ trợ đọc màn hình và hỗ trợ giảm chuyển động.
-- Ghi rõ rằng số liệu, câu chuyện sinh viên, mức giá và dữ liệu dashboard chỉ mang tính minh họa.
+- Build the page using Next.js App Router, React, TypeScript, Tailwind CSS, Motion, and Lucide icons. Since the current project already uses Next.js, I continued with this framework instead of adding Vite or React Router.
+- Split the interface into reusable components for layout, sections, and shared UI elements. Data for features, pricing, testimonials, FAQ, and sample questions is managed separately with clear TypeScript types.
+- Complete the navigation bar, conversation-style hero section, learning topic strip, problem statement section, six feature cards, three-step process, dashboard preview, sample statistics, three fictional testimonials, three pricing plans, FAQ, final call to action, and footer.
+- Create a fully front-end AI demo: choose a suggested question or enter your own, show loading states and typing effects, receive sample responses, select the next question, and reset the conversation. The demo does not call a real AI service.
+- Design the mobile menu and responsive layout for the hero, cards, demo, dashboard, pricing section, and footer. Add a proper heading structure, keyboard controls, clear focus states, FAQ states for screen readers, and reduced-motion support.
+- Clarify that the numbers, student stories, pricing, and dashboard data are illustrative only.
 
-### 4. Kiểm tra và xử lý vấn đề
+### 4. Testing and issue handling
 
-- Chạy ESLint, kiểm tra kiểu TypeScript và production build thành công.
-- Kiểm tra trang trên trình duyệt ở kích thước desktop và mobile. Thử menu, câu hỏi gợi ý, câu hỏi tự nhập, chức năng đặt lại demo, FAQ và kiểm tra không có tràn ngang ở màn hình rộng 390px.
-- Điều chỉnh kích thước tiêu đề hero để không lấn vào bản xem trước sản phẩm; sửa biểu tượng mũi tên của nút kêu gọi hành động bị xuống dòng trên mobile.
-- Lần build đầu phụ thuộc vào việc tải font từ mạng và Turbopack không thể khởi chạy worker trong môi trường bị giới hạn. Tôi chuyển sang bộ font hệ thống có sẵn và cấu hình production build dùng webpack.
+- Run ESLint, check TypeScript types, and confirm the production build succeeds.
+- Test the page in desktop and mobile browser sizes. Try the menu, suggested questions, custom questions, demo reset, FAQ, and verify there is no horizontal overflow on a 390px-wide screen.
+- Adjust the hero heading size so it does not overlap the product preview; fix the action button arrow icon wrapping on mobile.
+- The first build depended on loading fonts from the network, and Turbopack could not start workers in the restricted environment. I switched to the system font stack and configured the production build to use webpack.
 
-## B. Tổng kết
+## B. Summary
 
-### Những gì tôi học được
+### What I learned
 
-- Việc xác định sản phẩm và phác thảo wireframe trước giúp giao diện nhất quán hơn và giảm các quyết định cảm tính trong lúc lập trình.
-- Server Component của Next.js phù hợp với nội dung tĩnh của landing page; demo tương tác, menu mobile, FAQ và animation cần Client Component.
-- Tương tác nhỏ giúp landing page thể hiện sản phẩm rõ hơn, nhưng phải nói minh bạch khi câu trả lời và dữ liệu chỉ là mô phỏng.
-- Thiết kế responsive cần được kiểm tra trên màn hình thật hoặc viewport hẹp, không chỉ thu nhỏ bố cục desktop.
+- Defining the product and sketching the wireframe beforehand makes the interface more consistent and reduces impulsive decisions during implementation.
+- Next.js Server Components are suitable for static landing page content; the interactive demo, mobile menu, FAQ, and animations require Client Components.
+- Small interactions make the landing page communicate the product more clearly, but the simulated responses and data must be labeled transparently.
+- Responsive design needs to be tested on real screens or narrow viewports, not only by shrinking the desktop layout.
 
-### Khó khăn và cách giải quyết
+### Challenges and solutions
 
-- **Cân bằng giữa hero nổi bật và bản xem trước dễ đọc:** Tôi kiểm tra giao diện desktop rồi điều chỉnh kích thước chữ, khoảng cách và vị trí thẻ nổi.
-- **Giữ trải nghiệm thuận tiện trên mobile:** Tôi cho các cột xếp chồng, rút gọn thanh điều hướng của dashboard, kiểm tra các nút và xác nhận trang không bị tràn ngang.
-- **Trình bày đúng bản chất của demo AI:** Tôi dùng phản hồi mẫu chạy cục bộ, thông báo rõ giới hạn với chủ đề chưa hỗ trợ và nêu rằng demo không tải lên hoặc lưu tài liệu học tập.
+- **Balancing a prominent hero section with a readable product preview:** I tested the desktop layout first and then adjusted font sizes, spacing, and floating card positioning.
+- **Keeping the mobile experience smooth:** I stacked columns, simplified the dashboard navigation, checked button behavior, and confirmed the page had no horizontal overflow.
+- **Presenting the AI demo accurately:** I used local sample responses, clearly communicated the limitation around unsupported topics, and stated that the demo does not upload or save study materials.
 
 ## URL PAGE
 
-- Repository dự án: [StudyFlowAI trên GitHub](https://github.com/nganne2203/StudyFlowAI)
+- Project repository: [StudyFlowAI on GitHub](https://github.com/nganne2203/StudyFlowAI)
 - Public preview: [StudyFlowAI on Vercel](https://studyflowai-eta.vercel.app)
