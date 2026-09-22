@@ -6,4 +6,6 @@ chapter = true
 
 # Week 02
 
-Daily PEEP 2026 notes for the second week. This week I went to the office for 2 days.
+Daily PEEP 2026 notes for the second week.
+
+* [Day 1 - Monday - On-site](day-01/)

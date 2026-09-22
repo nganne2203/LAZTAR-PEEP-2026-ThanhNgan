@@ -6,4 +6,6 @@ chapter = true
 
 # Tuần 02
 
-Ghi chú PEEP 2026 hằng ngày cho tuần thứ hai. Tuần này mình lên công ty 2 ngày.
+Ghi chú PEEP 2026 hằng ngày cho tuần thứ hai.
+
+* [Ngày 1 - Thứ Hai - On-site](day-01/)
