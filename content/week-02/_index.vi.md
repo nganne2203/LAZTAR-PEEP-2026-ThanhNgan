@@ -12,3 +12,4 @@ Ghi chú PEEP 2026 hằng ngày cho tuần thứ hai.
 * [Ngày 2 - Thứ Ba - Remote](day-02/)
 * [Ngày 3 - Thứ Tư - On-site](day-03/)
 * [Ngày 04 - Thứ Năm - Remote](day-04/)
+* [Ngày 05 - Thứ Sáu - Remote](day-06/)
