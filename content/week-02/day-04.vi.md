@@ -1,11 +1,11 @@
 +++
-title = "Ngày 04 - 24/09/2026 (On-site)"
+title = "Ngày 04 - 24/09/2026 (Remote)"
 weight = 4
 +++
 
 # Báo cáo ngày 04
 
-- **Chế độ làm việc:** On-site
+- **Chế độ làm việc:** Remote
 - **Dự án:** Mini-WMS
 
 ## A. Công việc thực tế

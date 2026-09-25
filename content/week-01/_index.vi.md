@@ -6,7 +6,7 @@ chapter = true
 
 # Tuần 01
 
-Ghi chú PEEP 2026 hằng ngày cho tuần đầu tiên. Tuần này mình lên công ty 4 ngày.
+Ghi chú PEEP 2026 hằng ngày cho tuần đầu tiên.
 
 - [Ngày 01 - Thứ Ba - On-ste](day-01/)
 - [Ngày 02 - Thứ Tư - On-site](day-02/)

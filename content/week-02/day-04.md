@@ -1,11 +1,11 @@
 +++
-title = "Day 04 - 24/09/2026 (On-site)"
+title = "Day 04 - 24/09/2026 (Remote)"
 weight = 4
 +++
 
 # Daily Report - Day 04
 
-- **Work mode:** On-site
+- **Work mode:** Remote
 - **Project:** Mini-WMS
 
 ## A. Practical work

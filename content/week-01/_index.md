@@ -6,7 +6,7 @@ chapter = true
 
 # Week 01
 
-Daily PEEP 2026 notes for the first week. This week I went to the office for 4 days.
+Daily PEEP 2026 notes for the first week.
 
 - [Day 01 - Tuesday - On-site](day-01/)
 - [Day 02 - Wednesday - On-site](day-02/)
