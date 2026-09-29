@@ -9,3 +9,4 @@ chapter = true
 Ghi chú PEEP 2026 hằng ngày cho tuần thứ ba.
 
 * [Ngày 1 - Thứ Hai - Remote](day-01/)
+* [Ngày 2 - Thứ Ba - On-site](day-02/)
