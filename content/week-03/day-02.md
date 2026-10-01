@@ -1,3 +1,4 @@
+
 +++
 title = "Day 02 - 29/09/2026 (On-site)"
 weight = 2
