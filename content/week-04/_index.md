@@ -12,3 +12,4 @@ Daily PEEP 2026 notes for the fourth week.
 * [Day 2 - Tuesday - Remote](day-02/)
 * [Day 3 - Wednesday - Remote](day-03/)
 * [Day 4 - Thursday - On-site](day-04/)
+* [Day 5 - Friday - On-site](day-05/)
