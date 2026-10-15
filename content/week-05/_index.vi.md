@@ -9,3 +9,5 @@ chapter = true
 Ghi chú PEEP 2026 hằng ngày cho tuần thứ năm.
 
 * [Ngày 1 - Thứ Hai - Remote](day-01/)
+* [Ngày 2 - Thứ Ba - Remote](day-02/)
+* [Ngày 3 - Thứ Tư - Remote](day-03/)
