@@ -291,5 +291,5 @@ Nền tảng triển khai phải hỗ trợ những tính năng dự án sử d�
 
 ## URL PAGE
 
-* Link landing page: [portfolio-nganne2203s-projects.vercel.app](https://portfolio-nganne2203s-projects.vercel.app/)
+* Link landing page: [portfolio-nganne2203s-projects.vercel.app](https://portfolio-swart-omega-2epn904xwg.vercel.app)
 * Link Repo: [github.com/nganne2203/Portfolio](https://github.com/nganne2203/Portfolio)
